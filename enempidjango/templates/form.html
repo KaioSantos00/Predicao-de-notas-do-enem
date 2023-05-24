@@ -1,0 +1,18 @@
+
+<form method="POST">{% load crispy_forms_tags %}
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Predizer">
+  </form>
+  
+  {% comment %} <p>A previsão da nota do ENEM é: {{ previsao }}</p>
+
+  <p>A previsão da nota do ENEM é: {{ previsao }}</p> {% endcomment %}
+
+  <p>A nota do aluno em Matemática é: {{ nota_matematica }}</p>
+  <p>A nota do aluno em Linguagens e Códigos é: {{ nota_linguagens }}</p>
+  <p>A nota do aluno em Ciências Humanas é: {{ nota_humanas }}</p>
+  <p>A nota do aluno em Ciências da Natureza é: {{ nota_natureza }}</p>
+  <p>A nota do aluno na Redação é: {{ nota_redacao }}</p>
+  

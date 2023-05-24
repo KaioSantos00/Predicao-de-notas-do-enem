@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário EnemScore</title>
+</head>
+<body>
+	<h1>Formulário EnemScore</h1>
+	<form action="{% url 'realizar_predicao' %}" method="post">
+
+		{% csrf_token %}
+		<label for="faixa_etaria">Faixa Etária:</label>
+		<select id="faixa_etaria" name="faixa_etaria">
+			<option value="">Selecione</option>
+			{% for choice in faixa_etaria_choices %}
+			<option value="{{ choice.0 }}">{{ choice.1 }}</option>
+			{% endfor %}
+		</select><br><br>
+		<label for="cor">Cor:</label>
+		<select id="cor" name="cor">
+			<option value="">Selecione</option>
+			{% for choice in cor_choices %}
+			<option value="{{ choice.0 }}">{{ choice.1 }}</option>
+			{% endfor %}
+		</select><br><br>
+		<label for="concluiu_ensino_medio">Concluiu o Ensino Médio:</label>
+		<select id="concluiu_ensino_medio" name="concluiu_ensino_medio">
+			<option value="">Selecione</option>
+			{% for choice in concluiu_ensino_medio_choices %}
+			<option value="{{ choice.0 }}">{{ choice.1 }}</option>
+			{% endfor %}
+		</select><br><br>
+		<label for="mae_educ">Nível de Escolaridade da Mãe:</label>
+		<select id="mae_educ" name="mae_educ">
+			<option value="">Selecione</option>
+			{% for choice in nivel_escolaridade_mae_choices %}
+			<option value="{{ choice.0 }}">{{ choice.1 }}</option>
+			{% endfor %}
+		</select><br><br>
+		<label for="renda">Renda:</label>
+		<select id="renda" name="renda">
+			<option value="">Selecione</option>
+			{% for choice in renda_choices %}
+			<option value="{{ choice.0 }}">{{ choice.1 }}</option>
+			{% endfor %}
+		</select><br><br>
+		<label for="tem_internet">Tem acesso à internet:</label>
+		<input type="checkbox" id="tem_internet" name="tem_internet"><br><br>
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>

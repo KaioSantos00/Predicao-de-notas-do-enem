@@ -1,0 +1,63 @@
+container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+container .part1 {
+    background-color: var(--color-black)
+} 
+container .part2 {
+    background-color: var(--color-blue)
+}
+
+content {
+	width: 80%;
+	height: 80%;
+	background-color: var(--color-white);
+	position: absolute;
+	margin: 5% 10%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	border-radius: 10px;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+content .title {
+	justify-self: center;
+	align-self: center;
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+
+content .title p {
+	margin-top: -0.3rem;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+content .title .image {
+	margin-top: -0.9rem;
+}
+
+content .prever {
+	width: 50%;
+	text-align: right;
+	justify-self: center;
+	font-size: 1.2rem;
+	align-self: center;
+	font-weight: bolder;
+	letter-spacing: -0.5px;
+}
+
+content .prever p {
+	margin-bottom: 3rem;
+}
+content .prever button {
+	width: 100%;
+	background-color: var(--color-blue);
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	letter-spacing: -0.2px;
+}

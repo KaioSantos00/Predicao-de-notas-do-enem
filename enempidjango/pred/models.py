@@ -176,15 +176,17 @@ class EnemScore(models.Model):
     (7, 'Completou a Pós-graduação'),
     (8, 'Não sei')
     ]   
-    TP_SEXO = models.BooleanField(default=False)
+    TP_FAIXA_ETARIA = models.IntegerField(choices=FAIXA_ETARIA_CHOICES, max_length=20)
+    TP_SEXO_MASCULINO = models.BooleanField(default=False)
     TP_ESTADO_CIVIL = models.IntegerField(choices=ESTADO_CIVIL_CHOICES, max_length=20)
-    TP_ENSINO =  models.IntegerField(max_length=300, choices=ENSINO_CHOICES)
-    TP_ANO_CONCLUIU = models.IntegerField(max_length=300, choices=ANO_CONCLUIU_CHOICES)
-    TP_LOCALIZACAO_ESC = models.IntegerField(max_length=300, choices=LOCAL_CHOICES)
+    TP_COR_RACA = models.IntegerField(max_length=20, choices=COR_CHOICES)
     TP_ST_CONCLUSAO = models.IntegerField(choices=CONCLUIU_ENSINO_MEDIO_CHOICES)
+    TP_ANO_CONCLUIU = models.IntegerField(max_length=300, choices=ANO_CONCLUIU_CHOICES)
+    TP_ESCOLA = models.IntegerField(choices=TP_ESCOLA_CHOICES, max_length=20)
+    TP_ENSINO =  models.IntegerField(max_length=300, choices=ENSINO_CHOICES)
+    TP_LOCALIZACAO_ESC = models.IntegerField(max_length=300, choices=LOCAL_CHOICES)
     Q001 = models.IntegerField(max_length=300, choices=NIVEL_ESCOLARIDADE_PAI_CHOICES)
     Q002 = models.IntegerField(max_length=300, choices=NIVEL_ESCOLARIDADE_MAE_CHOICES)
-    TP_ESCOLA = models.IntegerField(choices=TP_ESCOLA_CHOICES, max_length=20)
     Q003 = models.IntegerField(max_length=300, choices=OCUPACAO_PAI_CHOICES)
     Q004 = models.IntegerField(max_length=300, choices=OCUPACAO_MAE_CHOICES)
     Q005 = models.IntegerField(choices=Q05_CHOICES, max_length=20)
@@ -194,8 +196,6 @@ class EnemScore(models.Model):
     Q022= models.IntegerField(max_length=30, choices=TELEFONE_CHOICES)
     Q024 = models.IntegerField(choices=Q024_CHOICES, max_length=20)
     Q025 = models.BooleanField(default=False)
-    TP_FAIXA_ETARIA = models.IntegerField(choices=FAIXA_ETARIA_CHOICES, max_length=20)
-    TP_COR_RACA = models.IntegerField(max_length=20, choices=COR_CHOICES)
 
     def __str__(self):
         return f"EnemScore object ({self.renda})"

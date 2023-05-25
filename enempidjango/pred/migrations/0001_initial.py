@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("TP_SEXO", models.BooleanField(default=False)),
+                ("TP_SEXO_MASCULINO", models.BooleanField(default=False)),
                 (
                     "TP_ESTADO_CIVIL",
                     models.CharField(

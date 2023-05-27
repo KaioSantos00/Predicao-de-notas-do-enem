@@ -176,8 +176,16 @@ class EnemScore(models.Model):
     (7, 'Completou a Pós-graduação'),
     (8, 'Não sei')
     ]   
+    SEXO_CHOICES = [
+        (1,'Masculino'),(2,'Feminino'),
+    ]
+    Q025_CHOICES = [
+        (1,'Não'),
+        (2,'Sim'),
+
+    ]
     TP_FAIXA_ETARIA = models.IntegerField(choices=FAIXA_ETARIA_CHOICES, max_length=20)
-    TP_SEXO_MASCULINO = models.BooleanField(default=False)
+    TP_SEXO_MASCULINO = models.IntegerField(choices=SEXO_CHOICES)
     TP_ESTADO_CIVIL = models.IntegerField(choices=ESTADO_CIVIL_CHOICES, max_length=20)
     TP_COR_RACA = models.IntegerField(max_length=20, choices=COR_CHOICES)
     TP_ST_CONCLUSAO = models.IntegerField(choices=CONCLUIU_ENSINO_MEDIO_CHOICES)
@@ -195,7 +203,6 @@ class EnemScore(models.Model):
     Q012= models.IntegerField(max_length=30, choices=GELADEIRA_CHOICES)
     Q022= models.IntegerField(max_length=30, choices=TELEFONE_CHOICES)
     Q024 = models.IntegerField(choices=Q024_CHOICES, max_length=20)
-    Q025 = models.BooleanField(default=False)
-
+    Q025 = models.IntegerField(choices=Q025_CHOICES, max_length=20)
     def __str__(self):
         return f"EnemScore object ({self.renda})"

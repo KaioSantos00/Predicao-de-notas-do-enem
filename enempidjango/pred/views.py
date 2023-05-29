@@ -46,20 +46,20 @@ def prediction(request):
            
             previsao = modelo1.predict([dados_processados])
 
-            nota_matematica = previsao[0][0]
-            nota_linguagens = previsao[0][1]
-            nota_humanas = previsao[0][2]
-            nota_natureza = previsao[0][3]
-            nota_redacao = previsao[0][4]
+            nota_matematica = round(previsao[0][0], 1)
+            nota_linguagens = round(previsao[0][1], 1)
+            nota_humanas = round(previsao[0][2], 1)
+            nota_natureza = round(previsao[0][3], 1)
+            nota_redacao = round(previsao[0][4], 1)
 
-            return render(request,  'prediction.html', {'form': form, 'nota_matematica': nota_matematica,'nota_linguagens': nota_linguagens,'nota_humanas': nota_humanas,'nota_natureza': nota_natureza,'nota_redacao': nota_redacao})
+            return render(request, 'result_prediction.html', {'form': form, 'nota_matematica': nota_matematica,'nota_linguagens': nota_linguagens,'nota_humanas': nota_humanas,'nota_natureza': nota_natureza,'nota_redacao': nota_redacao})
 
     else:
         form = EnemForm()
     return render(request, 'prediction.html', {'form': form})
 
-
-
+def result_prediction(request):
+    return render(request, 'result_prediction.html')
 
 
 

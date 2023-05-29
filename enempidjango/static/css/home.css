@@ -28,12 +28,17 @@ content .title {
 	align-self: center;
 	font-weight: bolder;
 	font-size: 1.3rem;
+	letter-spacing: -1px;
+    font-family: var(--font-montserrat);
 }
 
 content .title p {
 	margin-top: -0.3rem;
 	text-transform: uppercase;
+	font-weight: bolder;
 	letter-spacing: -1px;
+	letter-spacing: -1px;
+    font-family: var(--font-montserrat);
 }
 
 content .title .image {
@@ -59,5 +64,6 @@ content .prever button {
 	outline: none;
 	border: none;
 	border-radius: 20px;
-	letter-spacing: -0.2px;
+	letter-spacing: -0.9px;
+    font-family: var(--font-montserrat);
 }

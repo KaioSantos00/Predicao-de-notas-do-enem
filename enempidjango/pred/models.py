@@ -88,14 +88,14 @@ class EnemScore(models.Model):
     (3	,'Educação de Jovens e Adultos')
     ]
     OCUPACAO_PAI_CHOICES = [
-       (1, 'Lavrador, agricultor sem empregados, bóia fria, criador de animais (gado, porcos, galinhas, ovelhas, cavalos etc.), apicultor, pescador, lenhador, seringueiro, extrativista.'),
+    (1, 'Lavrador, agricultor sem empregados, bóia fria, criador de animais (gado, porcos, galinhas, ovelhas, cavalos etc.), apicultor, pescador, lenhador, seringueiro, extrativista.'),
     (2, 'Diarista, empregado doméstico, cuidador de idosos, babá, cozinheiro (em casas particulares), motorista particular, jardineiro, faxineiro de empresas e prédios, vigilante, porteiro, carteiro, office-boy, vendedor, caixa, atendente de loja, auxiliar administrativo, recepcionista, servente de pedreiro, repositor de mercadoria.'),
     (3,	'Padeiro, cozinheiro industrial ou em restaurantes, sapateiro, costureiro, joalheiro, torneiro mecânico, operador de máquinas, soldador, operário de fábrica, trabalhador da mineração, pedreiro, pintor, eletricista, encanador, motorista, caminhoneiro, taxista.'),
     (4,	'Professor (de ensino fundamental ou médio, idioma, música, artes etc.), técnico (de enfermagem, contabilidade, eletrônica etc.), policial, militar de baixa patente (soldado, cabo, sargento), corretor de imóveis, supervisor, gerente, mestre de obras, pastor, microempresário (proprietário de empresa com menos de 10 empregados), pequeno comerciante, pequeno proprietário de terras, trabalhador autônomo ou por conta própria.'),
     (5,	'Médico, engenheiro, dentista, psicólogo, economista, advogado, juiz, promotor, defensor, delegado, tenente, capitão, coronel, professor universitário, diretor em empresas públicas ou privadas, político, proprietário de empresas com mais de 10 empregados.')
     ]
     OCUPACAO_MAE_CHOICES = [
-       (1, 'Lavrador, agricultor sem empregados, bóia fria, criador de animais (gado, porcos, galinhas, ovelhas, cavalos etc.), apicultor, pescador, lenhador, seringueiro, extrativista.'),
+    (1, 'Lavrador, agricultor sem empregados, bóia fria, criador de animais (gado, porcos, galinhas, ovelhas, cavalos etc.), apicultor, pescador, lenhador, seringueiro, extrativista.'),
     (2, 'Diarista, empregado doméstico, cuidador de idosos, babá, cozinheiro (em casas particulares), motorista particular, jardineiro, faxineiro de empresas e prédios, vigilante, porteiro, carteiro, office-boy, vendedor, caixa, atendente de loja, auxiliar administrativo, recepcionista, servente de pedreiro, repositor de mercadoria.'),
     (3,	'Padeiro, cozinheiro industrial ou em restaurantes, sapateiro, costureiro, joalheiro, torneiro mecânico, operador de máquinas, soldador, operário de fábrica, trabalhador da mineração, pedreiro, pintor, eletricista, encanador, motorista, caminhoneiro, taxista.'),
     (4,	'Professor (de ensino fundamental ou médio, idioma, música, artes etc.), técnico (de enfermagem, contabilidade, eletrônica etc.), policial, militar de baixa patente (soldado, cabo, sargento), corretor de imóveis, supervisor, gerente, mestre de obras, pastor, microempresário (proprietário de empresa com menos de 10 empregados), pequeno comerciante, pequeno proprietário de terras, trabalhador autônomo ou por conta própria.'),
@@ -127,8 +127,8 @@ class EnemScore(models.Model):
     Q08_CHOICES = [
         (1, 'Não'),
         (2, 'Sim, um'),
-        (3, 'Sim, dos'),
-        (4, 'Sim, tres'),
+        (3, 'Sim, dois'),
+        (4, 'Sim, três'),
         (5, 'Sim, quatro ou mais')
     ]
     GELADEIRA_CHOICES = [
@@ -148,8 +148,8 @@ class EnemScore(models.Model):
     Q024_CHOICES = [
         (1, 'Não'),
         (2, 'Sim, um'),
-        (3, 'Sim, dos'),
-        (4, 'Sim, tres'),
+        (3, 'Sim, dois'),
+        (4, 'Sim, três'),
         (5, 'Sim, quatro ou mais')
 
     ]
@@ -184,25 +184,25 @@ class EnemScore(models.Model):
         (2,'Sim'),
 
     ]
-    TP_FAIXA_ETARIA = models.IntegerField(choices=FAIXA_ETARIA_CHOICES, max_length=20)
+    TP_FAIXA_ETARIA = models.IntegerField(choices=FAIXA_ETARIA_CHOICES)
     TP_SEXO_MASCULINO = models.IntegerField(choices=SEXO_CHOICES)
-    TP_ESTADO_CIVIL = models.IntegerField(choices=ESTADO_CIVIL_CHOICES, max_length=20)
-    TP_COR_RACA = models.IntegerField(max_length=20, choices=COR_CHOICES)
+    TP_ESTADO_CIVIL = models.IntegerField(choices=ESTADO_CIVIL_CHOICES)
+    TP_COR_RACA = models.IntegerField(choices=COR_CHOICES)
     TP_ST_CONCLUSAO = models.IntegerField(choices=CONCLUIU_ENSINO_MEDIO_CHOICES)
-    TP_ANO_CONCLUIU = models.IntegerField(max_length=300, choices=ANO_CONCLUIU_CHOICES)
-    TP_ESCOLA = models.IntegerField(choices=TP_ESCOLA_CHOICES, max_length=20)
-    TP_ENSINO =  models.IntegerField(max_length=300, choices=ENSINO_CHOICES)
-    TP_LOCALIZACAO_ESC = models.IntegerField(max_length=300, choices=LOCAL_CHOICES)
-    Q001 = models.IntegerField(max_length=300, choices=NIVEL_ESCOLARIDADE_PAI_CHOICES)
-    Q002 = models.IntegerField(max_length=300, choices=NIVEL_ESCOLARIDADE_MAE_CHOICES)
-    Q003 = models.IntegerField(max_length=300, choices=OCUPACAO_PAI_CHOICES)
-    Q004 = models.IntegerField(max_length=300, choices=OCUPACAO_MAE_CHOICES)
-    Q005 = models.IntegerField(choices=Q05_CHOICES, max_length=20)
-    Q008 = models.IntegerField(choices=Q08_CHOICES, max_length=20)
-    Q006 = models.IntegerField(max_length=30, choices=RENDA_CHOICES)
-    Q012= models.IntegerField(max_length=30, choices=GELADEIRA_CHOICES)
-    Q022= models.IntegerField(max_length=30, choices=TELEFONE_CHOICES)
-    Q024 = models.IntegerField(choices=Q024_CHOICES, max_length=20)
-    Q025 = models.IntegerField(choices=Q025_CHOICES, max_length=20)
+    TP_ANO_CONCLUIU = models.IntegerField(choices=ANO_CONCLUIU_CHOICES)
+    TP_ESCOLA = models.IntegerField(choices=TP_ESCOLA_CHOICES)
+    TP_ENSINO =  models.IntegerField(choices=ENSINO_CHOICES)
+    TP_LOCALIZACAO_ESC = models.IntegerField(choices=LOCAL_CHOICES)
+    Q001 = models.IntegerField(choices=NIVEL_ESCOLARIDADE_PAI_CHOICES)
+    Q002 = models.IntegerField(choices=NIVEL_ESCOLARIDADE_MAE_CHOICES)
+    Q003 = models.IntegerField(choices=OCUPACAO_PAI_CHOICES)
+    Q004 = models.IntegerField(choices=OCUPACAO_MAE_CHOICES)
+    Q005 = models.IntegerField(choices=Q05_CHOICES)
+    Q008 = models.IntegerField(choices=Q08_CHOICES)
+    Q006 = models.IntegerField(choices=RENDA_CHOICES)
+    Q012= models.IntegerField(choices=GELADEIRA_CHOICES)
+    Q022= models.IntegerField(choices=TELEFONE_CHOICES)
+    Q024 = models.IntegerField(choices=Q024_CHOICES)
+    Q025 = models.IntegerField(choices=Q025_CHOICES)
     def __str__(self):
         return f"EnemScore object ({self.renda})"

@@ -64,6 +64,8 @@ label {
 
 select {
 	cursor: pointer;
+	scroll-behavior: auto;
+	max-width: 100vw;
 }
 
 .buttons {

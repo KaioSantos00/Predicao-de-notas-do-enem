@@ -58,8 +58,8 @@ class EnemScore(models.Model):
     
     CONCLUIU_ENSINO_MEDIO_CHOICES = [
         (1, 'Já concluí o Ensino Médio'),
-        (2, 'Estou cursando e concluirei o Ensino Médio em 2020'),
-        (3, 'Estou cursando e concluirei o Ensino Médio após 2020'),
+        (2, 'Estou cursando e concluirei esse ano'),
+        (3, 'Estou cursando e concluirei esse ano'),
         (4, 'Não concluí e não estou cursando o Ensino Médio')
     ]
     LOCAL_CHOICES = [
@@ -67,23 +67,26 @@ class EnemScore(models.Model):
     ]
     ANO_CONCLUIU_CHOICES = [
         (0,	'Não informado'),
-        (1,	'2019'),
-        (2,	'2018'),
-        (3,	'2017'),
-        (4,'2016'),
-        (5,	'2015'),
-        (6,	'2014'),
-        (7,	'2013'),
-        (8,	'2012'),
-        (9,	'2011'),
-        (10,'2010'),
-        (11,'2009'),
-        (12	,'2008'),
-        (13	,'2007'),
-        (14	,'Antes de 2007')
+        (1, '2022'),
+        (2, '2021'),
+        (3,'2020'),
+        (4,	'2019'),
+        (5,	'2018'),
+        (6,	'2017'),
+        (7,'2016'),
+        (8,	'2015'),
+        (9,	'2014'),
+        (10,'2013'),
+        (11,'2012'),
+        (12,'2011'),
+        (13,'2010'),
+        (14,'2009'),
+        (15	,'2008'),
+        (16	,'2007'),
+        (17	,'Antes de 2007')
     ]
     ENSINO_CHOICES = [
-        (1	,'Ensino Regular'),
+    (1	,'Ensino Regular'),
     (2	,'Educação Especial - Modalidade Substitutiva'),
     (3	,'Educação de Jovens e Adultos')
     ]
